@@ -715,12 +715,6 @@ textarea {
   color: rgba(255, 255, 255, 0.72);
 }
 
-.data-section .data-grid article {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.14);
-  color: var(--white);
-}
-
 .data-grid,
 .deliverable-grid {
   display: grid;
@@ -734,19 +728,28 @@ textarea {
 
 .data-section .data-grid article {
   display: grid;
-  grid-template-columns: 1fr auto;
-  min-height: 150px;
-  align-content: center;
+  grid-template-columns: 54px 1fr;
+  gap: 18px;
+  min-height: 156px;
+  align-items: start;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--white);
 }
 
-.data-section .data-grid article::after {
-  content: "";
-  width: 42px;
-  height: 42px;
-  align-self: start;
-  background: linear-gradient(135deg, rgba(88, 183, 216, 0.28), rgba(255, 255, 255, 0.06));
-  border: 1px solid rgba(255, 255, 255, 0.13);
+.data-section .data-grid article > svg {
+  width: 54px;
+  height: 54px;
+  padding: 14px;
+  color: #8ee6f1;
+  background: linear-gradient(135deg, rgba(88, 183, 216, 0.24), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.data-section .data-grid h3 {
+  margin-top: 4px;
 }
 
 .deliverables {
@@ -979,27 +982,31 @@ textarea {
   content: "-";
 }
 
-.faq-list details p {
-  margin: 0;
-  padding: 0 22px 20px;
-  font-size: 0.98rem;
-}
-
-.faq-list details::details-content {
-  block-size: 0;
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
   transition:
-    block-size 260ms ease,
-    content-visibility 260ms ease allow-discrete;
+    grid-template-rows 520ms ease,
+    opacity 420ms ease;
 }
 
-.faq-list details[open]::details-content {
-  block-size: auto;
+.faq-answer > p {
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 22px;
+  font-size: 0.98rem;
+  transition: padding 520ms ease;
 }
 
-@supports not selector(::details-content) {
-  .faq-list details p {
-    animation: faqOpen 240ms ease;
-  }
+.faq-list details[open] .faq-answer {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faq-list details[open] .faq-answer > p {
+  padding-bottom: 20px;
 }
 
 .contact-section {
@@ -1108,18 +1115,6 @@ textarea {
   padding: 26px 0;
   color: rgba(255, 255, 255, 0.72);
   background: #061f35;
-}
-
-@keyframes faqOpen {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .footer-inner {
