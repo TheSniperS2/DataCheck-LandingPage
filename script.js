@@ -5,7 +5,7 @@ const statusMessage = document.querySelector("[data-form-status]");
 const setHeaderState = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 24);
 };
-
+ 
 const setStatus = (message, type) => {
   if (!statusMessage) return;
   statusMessage.textContent = message;
