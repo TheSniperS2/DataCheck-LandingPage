@@ -1,0 +1,7 @@
+# Source/context files only used to brief the landing page.
+_context/
+*.pdf
+
+# Local/editor noise.
+.DS_Store
+Thumbs.db
