@@ -21,6 +21,83 @@
   --max: 1160px;
 }
 
+/* ── Keyframes ──────────────────────────────────────────────────────────── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.93); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes heroOrbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scanPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(142, 230, 241, 0); }
+  50%       { box-shadow: 0 0 0 8px rgba(142, 230, 241, 0.32); }
+}
+
+@keyframes shimmer {
+  from { left: -60%; }
+  to   { left: 120%; }
+}
+
+@keyframes gridDrift {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 0 0, 18px 18px; }
+}
+
+@keyframes numGlow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.72; filter: brightness(1.25); }
+}
+
+@keyframes connectorFlow {
+  from { background-position: -100% 0; }
+  to   { background-position: 200% 0; }
+}
+
+/* ── Animaciones de entrada (scroll-triggered via IntersectionObserver) ─── */
+
+[data-animate] {
+  opacity: 0;
+}
+
+[data-animate="fadeUp"].is-visible {
+  animation: fadeUp 0.58s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+[data-animate="fadeLeft"].is-visible {
+  animation: fadeLeft 0.56s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+[data-animate="fadeRight"].is-visible {
+  animation: fadeRight 0.56s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+[data-animate="scaleIn"].is-visible {
+  animation: scaleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -100,6 +177,12 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--radius);
   font-weight: 800;
+  transition: box-shadow 240ms ease;
+}
+
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark {
+  box-shadow: 0 0 0 3px rgba(88, 183, 216, 0.45), 0 0 14px rgba(24, 139, 143, 0.35);
 }
 
 .brand strong {
@@ -184,9 +267,27 @@ textarea {
 }
 
 .button.primary {
+  position: relative;
+  overflow: hidden;
   color: var(--white);
   background: var(--blue-700);
   box-shadow: 0 16px 34px rgba(14, 96, 146, 0.28);
+}
+
+.button.primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+}
+
+.button.primary:hover::before {
+  animation: shimmer 0.65s ease forwards;
 }
 
 .button.secondary {
@@ -253,6 +354,7 @@ textarea {
     conic-gradient(from 110deg, transparent 0 26%, rgba(88, 183, 216, 0.32) 28% 32%, transparent 34% 100%);
   opacity: 0.8;
   pointer-events: none;
+  animation: heroOrbit 28s linear infinite;
 }
 
 .eyebrow {
@@ -404,6 +506,10 @@ textarea {
   text-transform: uppercase;
 }
 
+.risk-panel.soft {
+  border-left-color: var(--teal);
+}
+
 .risk-panel span {
   display: inline-block;
   margin-top: 12px;
@@ -460,6 +566,7 @@ textarea {
   background: rgba(142, 230, 241, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius);
+  animation: scanPulse 2.4s ease-in-out infinite;
 }
 
 .audit-map-head strong {
@@ -688,6 +795,7 @@ textarea {
   background: var(--white);
   border-radius: var(--radius);
   font-weight: 900;
+  animation: numGlow 3.5s ease-in-out infinite;
 }
 
 .steps h3 {
@@ -705,6 +813,7 @@ textarea {
     linear-gradient(180deg, rgba(8, 38, 63, 0.96), rgba(8, 68, 80, 0.98)),
     repeating-linear-gradient(45deg, rgba(14, 96, 146, 0.06) 0, rgba(14, 96, 146, 0.06) 1px, transparent 1px, transparent 18px);
   color: var(--white);
+  animation: gridDrift 8s linear infinite;
 }
 
 .data-section .eyebrow {
@@ -863,7 +972,13 @@ textarea {
   right: -18px;
   width: 24px;
   height: 1px;
-  background: rgba(14, 96, 146, 0.36);
+  background: linear-gradient(90deg,
+    rgba(14, 96, 146, 0.36),
+    rgba(88, 183, 216, 0.8),
+    rgba(14, 96, 146, 0.36)
+  );
+  background-size: 200% 100%;
+  animation: connectorFlow 2.5s linear infinite;
 }
 
 .ecosystem-grid article:last-child::after {
@@ -880,6 +995,7 @@ textarea {
   background: linear-gradient(135deg, var(--blue-700), var(--teal));
   border-radius: var(--radius);
   font-weight: 900;
+  animation: numGlow 3.5s ease-in-out infinite;
 }
 
 .benefits {
@@ -1260,5 +1376,25 @@ textarea {
 
   .footer-inner {
     display: grid;
+  }
+}
+
+/* ── Accesibilidad: sin animaciones ─────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-content::after,
+  .audit-map-head > svg,
+  .steps span,
+  .ecosystem-grid span,
+  .ecosystem-grid article::after,
+  .data-section,
+  .button.primary::before {
+    animation: none !important;
   }
 }
