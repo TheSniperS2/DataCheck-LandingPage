@@ -11,11 +11,7 @@ Landing page estatica para DataCheck Consultores, enfocada en proteccion de dato
 
 ## Formulario
 
-El formulario esta configurado para enviar solicitudes mediante FormSubmit a:
-
-`franco.munoz@alumnos.ucentral.cl`
-
-La primera solicitud puede requerir activar FormSubmit desde el correo receptor.
+El formulario funciona como una demostracion local: valida los campos y muestra una confirmacion, pero no almacena ni envia los datos ingresados.
 
 ## Desarrollo local
 

@@ -1,11 +1,9 @@
 # Assets
 
-La landing ya no usa `datacheck-symbol.jpg` porque venia recortada desde el PDF.
+Recursos principales usados por la landing:
 
-Imagen faltante recomendada: 1
+- `datacheck-symbol.png`: recorte cuadrado del escudo formado por codigo, usado en header, favicon, contacto y footer.
+- `datacheck-logo-full.png`: composicion horizontal del logo completo para metadatos sociales.
+- `hero-datacheck-security.webp`: composicion del hero basada en `image1.png`, ubicada completa a la derecha y con espacio libre para el contenido a la izquierda.
 
-- `brand-symbol-clean.png`: version limpia del simbolo de DataCheck, idealmente escudo/cerebro completo en PNG o SVG, sin bordes recortados. Ubicacion prevista en `index.html`: bloque con `data-image-slot="brand-symbol"`. Por ahora ese espacio esta resuelto con una composicion animada hecha en HTML/CSS, asi que la pagina funciona sin esa imagen.
-
-Imagen actual usada:
-
-- `hero-clinical-security.jpg`: imagen de apoyo para el hero y la seccion de beneficios, derivada del PDF.
+Los archivos JPG anteriores se conservan como respaldo, pero ya no forman parte visible de la pagina.

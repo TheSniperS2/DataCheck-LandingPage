@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -6,30 +6,59 @@
     <title>DataCheck Consultores | Protección de datos sensibles</title>
     <meta
       name="description"
-      content="Diagnóstico, auditoría e IA responsable para ordenar y proteger datos sensibles en centros psicológicos y psiquiátricos privados frente a la Ley 21.719."
+      content="Diagnóstico especializado y hoja de ruta para ordenar y proteger datos sensibles en centros psicológicos y psiquiátricos privados frente a la Ley 21.719."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:title" content="DataCheck Consultores | Protección de datos sensibles" />
+    <meta
+      property="og:description"
+      content="Diagnóstico especializado y hoja de ruta para centros psicológicos y psiquiátricos privados."
+    />
+    <meta property="og:image" content="assets/datacheck-logo-full.png" />
+    <link rel="icon" type="image/png" href="assets/datacheck-symbol.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Manrope:wght@400;600;700;800;900&display=swap"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#inicio" aria-label="DataCheck Consultores">
-        <span class="brand-mark">DC</span>
+        <span class="brand-mark">
+          <img src="assets/datacheck-symbol.png" alt="" width="42" height="42" />
+        </span>
         <span>
           <strong>DataCheck</strong>
           <small>Consultores</small>
         </span>
       </a>
 
-      <nav class="site-nav" aria-label="Navegación principal">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Abrir menú de navegación"
+        data-menu-toggle
+      >
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal" data-mobile-nav>
         <a href="#problema">El desafío</a>
         <a href="#metodo">Cómo trabajamos</a>
         <a href="#entregables">Entregables</a>
+        <a href="#diagnostico">Diagnóstico</a>
         <a href="#contacto">Contacto</a>
       </nav>
 
       <a class="header-cta" href="#contacto">
         <i data-lucide="calendar-check" aria-hidden="true"></i>
-        Solicitar diagnóstico
+        Solicitar orientación
       </a>
     </header>
 
@@ -37,25 +66,29 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-overlay"></div>
+        <div class="security-stream" aria-hidden="true" data-security-stream>
+          <div class="security-stream-lane" data-security-lane></div>
+          <div class="security-stream-lane" data-security-lane></div>
+        </div>
         <div class="hero-content">
           <p class="eyebrow">Ley 21.719 · centros de salud mental · datos sensibles</p>
-          <h1 id="hero-title">Tu centro no tiene que enfrentar solo la nueva ley de datos.</h1>
+          <p class="hero-slogan">Protegemos los datos que sostienen la confianza clínica.</p>
+          <h1 id="hero-title">Más claridad y control para proteger los datos de tus pacientes.</h1>
           <p class="hero-copy">
-            La mayoría de los centros psicológicos y psiquiátricos privados no tienen equipo legal ni de datos.
-            DataCheck convierte esa realidad en un diagnóstico claro: sabemos qué revisar, cómo priorizarlo y cómo
-            explicarlo en lenguaje que el equipo clínico entiende.
+            En dos semanas revisamos cómo tu centro gestiona fichas, consentimientos, WhatsApp, archivos y sistemas
+            clínicos. Recibes un diagnóstico claro y una hoja de ruta priorizada, sin interrumpir la atención.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#contacto">
               <i data-lucide="shield-check" aria-hidden="true"></i>
-              Solicitar diagnóstico
+              Solicitar orientación inicial
             </a>
             <a class="button secondary" href="#metodo">
               <i data-lucide="arrow-down" aria-hidden="true"></i>
               Ver metodología
             </a>
           </div>
-          <dl class="hero-stats" aria-label="Enfoque DataCheck">
+          <dl class="hero-stats" role="group" aria-label="Enfoque DataCheck">
             <div>
               <dt>4</dt>
               <dd>etapas de auditoría</dd>
@@ -65,8 +98,8 @@
               <dd>entregables prácticos</dd>
             </div>
             <div>
-              <dt>IA</dt>
-              <dd>con revisión humana</dd>
+              <dt>2</dt>
+              <dd>semanas de diagnóstico</dd>
             </div>
           </dl>
 
@@ -81,7 +114,8 @@
             <p>
               La información de tus pacientes crece en fichas físicas, correos, WhatsApp, nubes y software clínico.
               Así funcionan los centros: el foco está en el paciente, no en el archivo. El problema es que la
-              Ley 21.719 ahora exige que puedas explicar quién accede a qué, con qué finalidad y por cuánto tiempo.
+              La Ley 21.719, que entra en vigencia el 1 de diciembre de 2026, exigirá mayor claridad sobre quién
+              accede a qué, con qué finalidad y por cuánto tiempo.
             </p>
           </div>
           <aside class="risk-panel soft" aria-label="Riesgos principales">
@@ -106,49 +140,16 @@
               tiempo que tu centro tiene disponible.
             </p>
           </div>
-          <div class="value-visual" data-image-slot="brand-symbol">
-            <div class="audit-map" aria-label="Mapa visual de datos sensibles auditados">
-              <div class="audit-map-head">
-                <i data-lucide="scan-search" aria-hidden="true"></i>
-                <strong>Mapa de datos</strong>
-              </div>
-              <div class="audit-map-grid">
-                <div>
-                  <i data-lucide="clipboard-plus" aria-hidden="true"></i>
-                  <span>Fichas</span>
-                </div>
-                <div>
-                  <i data-lucide="message-circle" aria-hidden="true"></i>
-                  <span>WhatsApp</span>
-                </div>
-                <div>
-                  <i data-lucide="cloud" aria-hidden="true"></i>
-                  <span>Nube</span>
-                </div>
-                <div>
-                  <i data-lucide="folder-lock" aria-hidden="true"></i>
-                  <span>Archivo</span>
-                </div>
-              </div>
-              <div class="audit-map-result">
-                <i data-lucide="shield-check" aria-hidden="true"></i>
-                <div>
-                  <strong>Procesos auditables</strong>
-                  <span>Riesgos, accesos y responsables visibles.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="value-list" aria-label="Diferenciales">
+          <div class="value-list" role="group" aria-label="Diferenciales">
             <article>
               <i data-lucide="stethoscope" aria-hidden="true"></i>
               <h3>Especialización</h3>
-              <p>Trabajamos exclusivamente en salud mental privada: fichas, test, informes, recetas y derivaciones.</p>
+              <p>Enfoque especializado en salud mental privada: fichas, test, informes, recetas y derivaciones.</p>
             </article>
             <article>
-              <i data-lucide="bot" aria-hidden="true"></i>
-              <h3>IA responsable</h3>
-              <p>Clasifica datos y detecta brechas usando minimización y anonimización cuando corresponde.</p>
+              <i data-lucide="timer" aria-hidden="true"></i>
+              <h3>Proceso ágil</h3>
+              <p>Un diagnóstico enfocado de dos semanas para avanzar sin paralizar la atención clínica.</p>
             </article>
             <article>
               <i data-lucide="message-square-text" aria-hidden="true"></i>
@@ -175,7 +176,7 @@
             </p>
           </div>
 
-          <div class="flow-panel" aria-label="De información dispersa a procesos auditables">
+          <div class="flow-panel" role="group" aria-label="De información dispersa a procesos auditables">
             <div>
               <span>Antes</span>
               <strong>¿Cómo están tus datos hoy?</strong>
@@ -185,7 +186,7 @@
             <div>
               <span>DataCheck</span>
               <strong>Lo que hacemos</strong>
-              <p>Levantamiento ordenado, clasificación con IA y validación humana.</p>
+              <p>Levantamiento ordenado, revisión estructurada y validación de un especialista.</p>
             </div>
             <i data-lucide="arrow-right" aria-hidden="true"></i>
             <div>
@@ -209,7 +210,7 @@
             <article>
               <span>03</span>
               <h3>Analizar</h3>
-              <p>La IA apoya la clasificación de datos y la detección de brechas. Un especialista humano valida todo.</p>
+              <p>Clasificamos los riesgos y un especialista revisa los hallazgos antes de recomendar acciones.</p>
             </article>
             <article>
               <span>04</span>
@@ -318,13 +319,44 @@
         </div>
       </section>
 
+      <section class="section offer-section" id="diagnostico" aria-labelledby="offer-title">
+        <div class="section-inner offer-card">
+          <div class="offer-copy">
+            <p class="eyebrow">Una primera etapa concreta</p>
+            <h2 id="offer-title">Diagnóstico DataCheck</h2>
+            <p>
+              Para centros pequeños que necesitan saber dónde están, qué riesgos atender primero y cómo avanzar
+              sin convertir la adecuación en otro problema para el equipo.
+            </p>
+            <ul class="offer-features">
+              <li><i data-lucide="check" aria-hidden="true"></i> Levantamiento mediante entrevistas breves.</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Revisión de canales, documentos y responsables.</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Seis entregables y hoja de ruta priorizada.</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Presentación final en lenguaje claro.</li>
+            </ul>
+          </div>
+          <aside class="offer-price" aria-label="Precio y condiciones del diagnóstico">
+            <span class="offer-label">Desde</span>
+            <strong>18 UF <small>+ IVA</small></strong>
+            <p>Diagnóstico estimado en dos semanas desde la recepción de los antecedentes necesarios.</p>
+            <a class="button primary full" href="#contacto">
+              <i data-lucide="calendar-check" aria-hidden="true"></i>
+              Solicitar orientación inicial
+            </a>
+            <small>
+              Orientación inicial sin costo. Confirmamos alcance, plazo y precio antes de comenzar.
+            </small>
+          </aside>
+        </div>
+      </section>
+
       <section class="section compliance-section" aria-labelledby="compliance-title">
         <div class="section-inner compliance-layout">
           <div>
             <p class="eyebrow">La ley en lenguaje claro</p>
-            <h2 id="compliance-title">La Ley 21.719 obliga. Nosotros te ayudamos a prepararte sin que sea un proceso agotador.</h2>
+            <h2 id="compliance-title">La Ley 21.719 entra en vigencia el 1 de diciembre de 2026. Te ayudamos a prepararte.</h2>
             <p>
-              La nueva ley chilena de protección de datos impone obligaciones concretas sobre cómo los centros
+              La nueva ley chilena de protección de datos impondrá obligaciones concretas sobre cómo los centros
               registran, usan y cuidan la información clínica. DataCheck traduce esas exigencias al trabajo diario
               de tu centro.
             </p>
@@ -334,7 +366,7 @@
               <i data-lucide="scale" aria-hidden="true"></i>
               <div>
                 <h3>Ley 21.719</h3>
-                <p>La ley exige documentar cómo tratas cada dato personal y sensible. Sin eso, el centro queda expuesto.</p>
+                <p>La ley exigirá documentar cómo se trata cada dato personal y sensible cuando entre en vigencia.</p>
               </div>
             </article>
             <article>
@@ -348,51 +380,15 @@
               <i data-lucide="file-signature" aria-hidden="true"></i>
               <div>
                 <h3>Consentimiento y finalidad</h3>
-                <p>¿Tus pacientes saben exactamente para qué usas su información? La ley exige que sea así y que puedas demostrarlo.</p>
+                <p>La finalidad y la base que autoriza cada tratamiento deberán quedar claras y ser demostrables.</p>
               </div>
             </article>
             <article>
               <i data-lucide="archive-restore" aria-hidden="true"></i>
               <div>
                 <h3>Conservación y eliminación</h3>
-                <p>¿Cuánto tiempo guardas las fichas? ¿Quién decide cuándo eliminarlas? La ley pide criterios claros y documentados.</p>
+                <p>Los plazos y criterios para conservar o eliminar información deberán quedar claros y documentados.</p>
               </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section ecosystem-section" aria-labelledby="ecosystem-title">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">Paso a paso</p>
-            <h2 id="ecosystem-title">Un proceso diseñado para que sepas exactamente qué viene después.</h2>
-          </div>
-          <div class="ecosystem-grid">
-            <article>
-              <span>01</span>
-              <h3>Diagnóstico</h3>
-              <p>Radiografía inicial de datos, canales, documentos y responsables.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Auditoría</h3>
-              <p>Revisión de accesos, almacenamiento, consentimientos y terceros.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>IA asistida</h3>
-              <p>Clasificación inicial de datos y detección de patrones de riesgo.</p>
-            </article>
-            <article>
-              <span>04</span>
-              <h3>Plan de adecuación</h3>
-              <p>Acciones priorizadas para mejorar el tratamiento de datos.</p>
-            </article>
-            <article>
-              <span>05</span>
-              <h3>Capacitación</h3>
-              <p>Buenas prácticas para equipos clínicos y administrativos.</p>
             </article>
           </div>
         </div>
@@ -451,7 +447,7 @@
             <details>
               <summary>¿Qué tan urgente es prepararse para la Ley 21.719?</summary>
               <div class="faq-answer">
-                <p>La ley ya está vigente. Los centros que aún no han iniciado su preparación están expuestos a sanciones administrativas y, en casos graves, a denuncias de pacientes. Empezar con un diagnóstico es el primer paso concreto y no requiere tener todo ordenado de antemano.</p>
+                <p>La ley fue publicada el 13 de diciembre de 2024 y entra en vigencia el 1 de diciembre de 2026. Empezar antes permite levantar procesos, detectar brechas y priorizar cambios sin esperar al último momento.</p>
               </div>
             </details>
             <details>
@@ -473,9 +469,21 @@
               </div>
             </details>
             <details>
-              <summary>¿La IA revisa información sensible de pacientes?</summary>
+              <summary>¿Cuánto cuesta el diagnóstico?</summary>
               <div class="faq-answer">
-                <p>La IA se usa como apoyo para clasificación y detección inicial, con revisión humana y criterios de minimización y anonimización cuando corresponde.</p>
+                <p>El diagnóstico parte desde 18 UF + IVA para centros pequeños. Antes de comenzar confirmamos el alcance y el valor, considerando cantidad de profesionales, sedes, sistemas y complejidad documental.</p>
+              </div>
+            </details>
+            <details>
+              <summary>¿Cuánto demora el proceso?</summary>
+              <div class="faq-answer">
+                <p>La duración estimada es de dos semanas desde que recibimos los antecedentes necesarios. Si el centro tiene varias sedes o procesos más complejos, el plazo se acuerda antes de iniciar.</p>
+              </div>
+            </details>
+            <details>
+              <summary>¿Qué no está incluido?</summary>
+              <div class="faq-answer">
+                <p>El servicio entrega diagnóstico y hoja de ruta. La representación jurídica, el desarrollo tecnológico y las implementaciones especializadas se cotizan o derivan por separado cuando son necesarias.</p>
               </div>
             </details>
           </div>
@@ -485,8 +493,8 @@
       <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
         <div class="section-inner contact-layout">
           <div>
-            <p class="eyebrow">Hablemos</p>
-            <h2 id="contact-title">Cuéntanos cómo funciona tu centro y te decimos por dónde empezar.</h2>
+            <p class="eyebrow">Orientación inicial sin costo</p>
+            <h2 id="contact-title">Cuéntanos cómo funciona tu centro y revisemos si este diagnóstico es adecuado.</h2>
             <p>
               No hace falta tener todo ordenado antes de contactarnos. Muchos centros parten desde cero.
               Lo que necesitamos es entender tu contexto: qué sistemas usan, cuántos profesionales hay
@@ -495,32 +503,47 @@
             <ul class="contact-points">
               <li><i data-lucide="check" aria-hidden="true"></i> Enfoque para centros pequeños y medianos.</li>
               <li><i data-lucide="check" aria-hidden="true"></i> Sin lenguaje jurídico innecesario.</li>
-              <li><i data-lucide="check" aria-hidden="true"></i> Te respondemos con los próximos pasos, no con una propuesta genérica.</li>
+              <li><i data-lucide="check" aria-hidden="true"></i> Confirmamos alcance, plazo y precio antes de comenzar.</li>
             </ul>
+            <div class="contact-brand" aria-label="Identidad de contacto propuesta">
+              <img src="assets/datacheck-symbol.png" alt="" width="58" height="58" />
+              <div>
+                <strong>Protegemos los datos que sostienen la confianza clínica.</strong>
+                <span>Correo propuesto para el prototipo: cuidamos@datacheck.cl</span>
+              </div>
+            </div>
           </div>
 
           <form
             class="contact-form"
             data-contact-form
-            action="https://formsubmit.co/franco.munoz@alumnos.ucentral.cl"
-            method="POST"
             novalidate
           >
-            <input type="hidden" name="_subject" value="Nueva solicitud desde landing DataCheck" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <p class="prototype-notice">
+              <i data-lucide="info" aria-hidden="true"></i>
+              Este formulario es parte de un prototipo. Los datos ingresados no se almacenan ni se envían.
+            </p>
             <div class="form-row">
               <label for="name">Nombre</label>
-              <input id="name" name="Nombre" type="text" autocomplete="name" required />
+              <input id="name" name="Nombre" type="text" autocomplete="name" required aria-describedby="name-error" />
+              <p class="field-error" id="name-error"></p>
             </div>
             <div class="form-row">
               <label for="center">Centro o institución</label>
-              <input id="center" name="Centro o institucion" type="text" autocomplete="organization" required />
+              <input
+                id="center"
+                name="Centro o institucion"
+                type="text"
+                autocomplete="organization"
+                required
+                aria-describedby="center-error"
+              />
+              <p class="field-error" id="center-error"></p>
             </div>
             <div class="form-row">
               <label for="email">Email</label>
-              <input id="email" name="Email" type="email" autocomplete="email" required />
+              <input id="email" name="Email" type="email" autocomplete="email" required aria-describedby="email-error" />
+              <p class="field-error" id="email-error"></p>
             </div>
             <div class="form-row">
               <label for="message">Mensaje</label>
@@ -529,12 +552,14 @@
                 name="Mensaje"
                 rows="4"
                 required
+                aria-describedby="message-error"
                 placeholder="Ej: usamos fichas físicas, Drive, WhatsApp y software clínico."
               ></textarea>
+              <p class="field-error" id="message-error"></p>
             </div>
             <button class="button primary full" type="submit">
               <i data-lucide="send" aria-hidden="true"></i>
-              Enviar solicitud
+              Solicitar orientación
             </button>
             <p class="form-status" data-form-status role="status" aria-live="polite"></p>
           </form>
@@ -544,12 +569,21 @@
 
     <footer class="site-footer">
       <div class="section-inner footer-inner">
-        <p><strong>DataCheck Consultores</strong> | Protección de datos sensibles en centros psicológicos y psiquiátricos.</p>
-        <p>© 2026 DataCheck Consultores. Todos los derechos reservados.</p>
+        <div class="footer-brand">
+          <img src="assets/datacheck-symbol.png" alt="" width="52" height="52" />
+          <div>
+            <strong>DataCheck Consultores</strong>
+            <p>Protegemos los datos que sostienen la confianza clínica.</p>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p><span>Correo propuesto:</span> cuidamos@datacheck.cl</p>
+          <p>© 2026 DataCheck Consultores. Todos los derechos reservados.</p>
+        </div>
       </div>
     </footer>
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
